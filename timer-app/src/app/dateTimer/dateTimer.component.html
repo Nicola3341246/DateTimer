@@ -1,3 +1,9 @@
 <main>
-  <h1>Date Timer</h1>
+  <div class="TimeForms">
+    <label for="dateInput">Date: "{{ dateInputValue }}"</label>
+    <input id="dateInput" type="date" [(ngModel)]="dateInputValue" />
+    <label for="timeInput">Time: "{{ timeInputValue }}"</label>
+    <input id="timeInput" type="time" [(ngModel)]="timeInputValue" />
+    <button>Test</button>
+  </div>
 </main>
