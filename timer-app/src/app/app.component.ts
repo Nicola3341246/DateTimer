@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { DateTimerComponent } from './dateTimer/dateTimer.component';
+import { DateTimerComponent } from './dateTimerForm/dateTimerForm.component';
 
 @Component({
   selector: 'app-root',

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { DateTimerComponent } from './dateTimer/dateTimer.component';
+import { DateTimerComponent } from './dateTimerForm/dateTimerForm.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

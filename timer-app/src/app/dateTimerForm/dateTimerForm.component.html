@@ -1,0 +1,13 @@
+<main>
+  <form
+    class="TimeForms"
+    [formGroup]="dateTimer"
+    (ngSubmit)="onDateTimerSubmit()"
+  >
+    <label for="dateInput">Date</label>
+    <input id="dateInput" type="date" formControlName="dateInput" />
+    <label for="timeInput">Time</label>
+    <input id="timeInput" type="time" formControlName="timeInput" />
+    <button>Test</button>
+  </form>
+</main>
