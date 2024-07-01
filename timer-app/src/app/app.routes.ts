@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
-import { DateTimerComponent } from './dateTimerForm/dateTimerForm.component';
+import { DateTimerFormComponent } from './dateTimerForm/dateTimerForm.component';
+import { DateTimerDisplayComponent } from './dateTimerDisplay/dateTimerDisplay.component';
 
 export const routes: Routes = [
-    { path:'dateTimerForm', component: DateTimerComponent},
+    { path:'date-timer-form', component: DateTimerFormComponent},
+    { path:'date-timer-display/:target', component: DateTimerDisplayComponent}
 ];
