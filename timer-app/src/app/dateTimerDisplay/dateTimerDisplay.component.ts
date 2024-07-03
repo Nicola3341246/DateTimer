@@ -28,20 +28,25 @@ export class DateTimerDisplayComponent {
     }
 
     timerStart() {
+        this.updateTimer();
         this.interval = setInterval(() => {
-            const now: Date = new Date();
-            let difference = this.targetDate.getTime() - now.getTime();
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor(
-                (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            );
-            const minutes = Math.floor(
-                (difference % (1000 * 60 * 60)) / (1000 * 60)
-            );
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            this.displayStr = `${days}d ${hours}H ${minutes}m ${seconds}s`;
+            this.updateTimer();
         }, 1000);
+    }
+
+    updateTimer() {
+        const now: Date = new Date();
+        let difference = this.targetDate.getTime() - now.getTime();
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+            (difference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        this.displayStr = `${days}d ${hours}H ${minutes}m ${seconds}s`;
     }
 }
