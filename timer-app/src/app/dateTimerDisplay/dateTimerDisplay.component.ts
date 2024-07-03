@@ -1,5 +1,6 @@
 import { Component, Input, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-date-timer-display',
@@ -7,15 +8,23 @@ import { isPlatformBrowser } from '@angular/common';
     styleUrls: ['./dateTimerDisplay.component.css'],
 })
 export class DateTimerDisplayComponent {
+    constructor(
+        @Inject(PLATFORM_ID) private platformId: Object,
+        private _router: Router
+    ) {}
+
     @Input() target!: string;
     targetDate: Date = new Date();
     displayStr: string = 'Xd XH XXm XXs';
     interval: any;
 
-    constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
     ngOnInit() {
         this.targetDate = new Date(this.target);
+        if (isNaN(this.targetDate.getTime())) {
+            alert('The date is incorrect');
+            this._router.navigate(['/date-timer-form']);
+        }
+
         if (isPlatformBrowser(this.platformId)) {
             this.timerStart();
         }
